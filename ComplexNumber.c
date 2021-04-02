@@ -20,44 +20,62 @@ typedef struct ComplexNumber
 ComplexNumber* newComplexNumber(double real_component, double imaginary_component)
 {
     //YOUR CODE HERE
-	return NULL;
+	ComplexNumber *node = (ComplexNumber*)malloc(sizeof(ComplexNumber));
+	node->real = real_component;
+	node->imaginary = imaginary_component;
+	return node;
+	//return NULL;
 }
 
 //Returns a pointer to a new Complex Number equal to a*b
 ComplexNumber* ComplexProduct(ComplexNumber* a, ComplexNumber* b)
 {
     //YOUR CODE HERE
-	return NULL;
+	ComplexNumber *node = (ComplexNumber*)malloc(sizeof(ComplexNumber));
+	node->real = a->real*b->real - a->imaginary*b->imaginary;
+	node->imaginary = a->real*b->imaginary + a->imaginary*b->real;
+	return node;
+	//return NULL;
 }
 
 //Returns a pointer to a new Complex Number equal to a+b
 ComplexNumber* ComplexSum(ComplexNumber* a, ComplexNumber* b)
 {
     //YOUR CODE HERE
-	return NULL;
+	ComplexNumber *node = (ComplexNumber*)malloc(sizeof(ComplexNumber));
+	node->real = a->real + b->real;
+	node->imaginary = a->imaginary + b->imaginary;
+	return node;
+	//return NULL;
 }
 
 //Returns the absolute value of Complex Number a
 double ComplexAbs(ComplexNumber* a)
 {
     //YOUR CODE HERE
-	return 0;
+	double res;
+	res = sqrt(a->real*a->real + a->imaginary*a->imaginary);
+	return res;
+	//return 0;
 }
 
 void freeComplexNumber(ComplexNumber* a)
 {
 	//YOUR CODE HERE
+    free(a);
 }
 
 double Re(ComplexNumber* a)
 {
 	//YOUR CODE HERE
-	return 0;
+    return a->real;
+	//return 0;
 }
 double Im(ComplexNumber* a)
 {
 	//YOUR CODE HERE
-	return 0;
+    return a->imaginary;
+	//return 0;
 }
 
 
@@ -107,3 +125,4 @@ int test_complex_number()
 	free(c);
 	return 0;
 }
+

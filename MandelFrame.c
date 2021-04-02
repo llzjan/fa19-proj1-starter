@@ -83,6 +83,7 @@ void printUsage(char* argv[])
 	//END STEP 3
 
 	//STEP 4: Free all allocated memory
+	free(center);
 	free(ar);
 	return 0;
 }
